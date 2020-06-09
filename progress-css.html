@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Progress Bar</title>
+</head>
+
+<body>
+    <div class="bar-container">
+        <div class="bar" />
+    </div>
+
+    <button onclick="fillBar(10)">Start</button>
+    <button onclick="clearBar(10)">Clear</button>
+
+    <script>
+        function fillBar(seconds){           
+            let bar = document.querySelector('.bar')
+            bar.style.transition = `${seconds}s linear width`
+            bar.style.width = `100%` 
+        }
+        function clearBar(seconds){           
+            let bar = document.querySelector('.bar')
+            bar.style.transition = `${seconds}s linear width`
+            bar.style.width = `0%`
+            
+        }
+    </script>
+
+    <style>
+       
+        .bar-container {
+            width: 200px;
+            height: 40px;
+            margin: 30px;
+            background-color: gray;
+        }
+
+        .bar {
+            background-color: green;
+            height: 100%;
+            width: 0%;
+        }
+    </style>
+</body>
+
+</html>
